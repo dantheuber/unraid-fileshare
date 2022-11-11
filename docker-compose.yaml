@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  web:
+    build: .
+    volumes:
+      - ./static:/server/static:rw
+    ports:
+      - "3123:3123"
