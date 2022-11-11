@@ -6,6 +6,7 @@ RUN npm i
 FROM node:16 as build
 WORKDIR /app
 COPY --from=dev-deps /modules ./
+COPY tsconfig.json ./
 COPY src/ ./src
 RUN /app/node_modules/.bin/typescript
 
