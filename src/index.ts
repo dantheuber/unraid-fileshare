@@ -6,7 +6,7 @@ const app = express();
 const port = 3123;
 
 app.use(morgan('combined'));
-console.log(__dirname);
+
 app.use('/g', express.static(join(__dirname, 'static')));
 
 app.listen(port, () => {
