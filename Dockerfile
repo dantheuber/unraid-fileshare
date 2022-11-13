@@ -1,14 +1,14 @@
 FROM node:16 as dev-deps
 WORKDIR /modules
 COPY package*.json ./
-RUN npm i
+RUN npm i --development
 
 FROM node:16 as build
 WORKDIR /app
 COPY --from=dev-deps /modules ./
 COPY tsconfig.json ./
 COPY src/ ./src
-RUN /app/node_modules/.bin/typescript
+RUN ./node_modules/.bin/tsc
 
 FROM node:16 as prod-deps
 WORKDIR /modules
@@ -20,4 +20,5 @@ WORKDIR /server
 COPY --from=build /app/dist /server/
 COPY --from=prod-deps /modules /server/
 COPY dist ./
+EXPOSE 3123
 CMD ["node", "."]

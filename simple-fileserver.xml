@@ -33,7 +33,7 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:3016]</WebUI>
+  <WebUI>http://[IP]:[PORT:3123]</WebUI>
   <Banner>http://i.imgur.com/zXpacAF.png</Banner>
   <Icon>http://i.imgur.com/zXpacAF.png</Icon>
 </Container>
